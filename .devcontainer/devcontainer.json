@@ -1,1 +1,20 @@
-
+{
+  "name": "Go Development",
+  "image": "golang:1.21", // Official Go Docker image
+  "features": {
+    "git": "latest" // Ensures Git is installed
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.Go" // Official Go extension for VSCode
+      ],
+      "settings": {
+        "go.gopath": "/go",
+        "go.useLanguageServer": true
+      }
+    }
+  },
+  "postCreateCommand": "go mod init github.com/AmmarHanoun/GoCourse && go get -v ./...", // Initialize Go module
+  "forwardPorts": [8080] // Forward ports if needed
+}
